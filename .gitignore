@@ -2,3 +2,17 @@
 .env
 __pycache__/
 *.pyc
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+
+# Archived one-off scripts & personal files (kept locally, out of the repo)
+archive/
+
+# UI (Next.js) — added in Phase 2
+node_modules/
+UI/.next/
+UI/out/
+UI/.env.local

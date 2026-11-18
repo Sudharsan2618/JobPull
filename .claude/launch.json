@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jobpull",
+      "runtimeExecutable": "BE/.venv/Scripts/python.exe",
+      "runtimeArgs": ["-m", "uvicorn", "app.server:app", "--app-dir", "BE", "--port", "8000"],
+      "port": 8000
+    },
+    {
+      "name": "jobpull-ui",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "UI",
+      "port": 3000
+    }
+  ]
+}

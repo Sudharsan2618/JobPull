@@ -1,0 +1,55 @@
+{
+  "_README": "Data-derived career-page target list. Built from companies actually present in the job-pull-simple DB (2564 jobs). Domains are confident corporate domains. 'ats' is a BEST-GUESS to be VERIFIED by inspecting the live careers-page network traffic — do NOT trust it blindly; guessing name->ATS is what broke the previous list. See 'verified_connectors' for endpoints confirmed by live inspection. 'count_all' = appearances across all jobs; 'count_accepted' = appearances among jobs matching your titles.",
+  "verified_connectors": {
+    "_note": "Confirmed by watching each careers page's real network calls (not guessed).",
+    "Genpact": {"type": "workday", "host": "genpact.wd108.myworkdayjobs.com", "tenant": "genpact", "site": "External_Careers", "list_api": "POST /wday/cxs/genpact/External_Careers/jobs", "connector": "sources/workday_source.py"},
+    "Accenture": {"type": "custom_json_api", "list_api": "POST https://www.accenture.com/api/accenture/elastic/findjobs", "note": "In-house Elasticsearch; returns full description + postedDateText + requisitionId. NOT a third-party ATS."},
+    "Valtech": {"type": "layered", "list_api": "GET https://www.valtech.com/joblist/getjsonresult", "ats_backend": "Teamtailor at careers.<region>.valtech.com/jobs/{id}-{slug}/applications/new", "note": "Branded shell + own list API + white-label Teamtailor apply. ATS not guessable from name/front-domain."}
+  },
+  "test_set": [
+    {"name": "Stripe",  "domain": "stripe.com",  "ats": "greenhouse", "count_all": 16, "note": "Confident Greenhouse. Reliable anchor for proving the pipeline."},
+    {"name": "NVIDIA",  "domain": "nvidia.com",  "ats": "unknown",    "count_all": 9,  "note": "Uses Eightfold/custom + Workday; let probe detect."},
+    {"name": "Genpact", "domain": "genpact.com", "ats": "unknown",    "count_all": 43, "note": "Likely Workday; large presence in your data."}
+  ],
+  "candidates_real_employers": [
+    {"name": "Accenture",   "domain": "accenture.com",  "ats": "custom_json_api (VERIFIED: /api/accenture/elastic/findjobs)", "count_all": 396},
+    {"name": "Virtusa",     "domain": "virtusa.com",    "ats": "verify (iCIMS/custom)",   "count_all": 80},
+    {"name": "Tata Consultancy Services", "domain": "tcs.com", "ats": "verify (custom nextstep portal)", "count_all": 73},
+    {"name": "Infosys",     "domain": "infosys.com",    "ats": "verify (custom portal)",  "count_all": 65, "count_accepted": 19},
+    {"name": "Genpact",     "domain": "genpact.com",    "ats": "workday (VERIFIED: genpact.wd108.myworkdayjobs.com/External_Careers)", "count_all": 43},
+    {"name": "PwC",         "domain": "pwc.com",        "ats": "verify (custom)",         "count_all": 43, "count_accepted": 3},
+    {"name": "HCLTech",     "domain": "hcltech.com",    "ats": "verify (custom)",         "count_all": 41},
+    {"name": "JPMorganChase","domain": "jpmorganchase.com","ats": "verify (oracle/custom)","count_all": 29},
+    {"name": "EY",          "domain": "ey.com",         "ats": "verify (custom)",         "count_all": 27},
+    {"name": "Cognizant",   "domain": "cognizant.com",  "ats": "verify (custom)",         "count_all": 26},
+    {"name": "Capgemini",   "domain": "capgemini.com",  "ats": "verify (workday?)",       "count_all": 23},
+    {"name": "CGI",         "domain": "cgi.com",        "ats": "verify (workday?)",       "count_all": 22},
+    {"name": "Google",      "domain": "google.com",     "ats": "verify (custom careers)", "count_all": 21},
+    {"name": "Wells Fargo", "domain": "wellsfargo.com", "ats": "verify (workday?)",       "count_all": 20},
+    {"name": "Wipro",       "domain": "wipro.com",      "ats": "verify (custom)",         "count_all": 18},
+    {"name": "Siemens",     "domain": "siemens.com",    "ats": "verify (smartrecruiters?)","count_all": 16},
+    {"name": "Stripe",      "domain": "stripe.com",     "ats": "greenhouse",              "count_all": 16},
+    {"name": "UST",         "domain": "ust.com",        "ats": "verify (custom)",         "count_all": 14},
+    {"name": "KLA",         "domain": "kla.com",        "ats": "verify (workday?)",       "count_all": 13},
+    {"name": "EPAM Systems","domain": "epam.com",       "ats": "verify (custom)",         "count_all": 12},
+    {"name": "Deloitte",    "domain": "deloitte.com",   "ats": "verify (custom)",         "count_all": 12},
+    {"name": "Cisco",       "domain": "cisco.com",      "ats": "verify (custom)",         "count_all": 11},
+    {"name": "AMD",         "domain": "amd.com",        "ats": "verify (workday?)",       "count_all": 10},
+    {"name": "GlobalLogic", "domain": "globallogic.com","ats": "verify (workday?)",       "count_all": 9},
+    {"name": "Tech Mahindra","domain": "techmahindra.com","ats": "verify (custom)",       "count_all": 9},
+    {"name": "Qualcomm",    "domain": "qualcomm.com",   "ats": "verify (workday?)",       "count_all": 9},
+    {"name": "NVIDIA",      "domain": "nvidia.com",     "ats": "verify (eightfold/workday)","count_all": 9},
+    {"name": "Sonata Software","domain": "sonata-software.com","ats": "verify",           "count_all": 2, "count_accepted": 2},
+    {"name": "EdgeVerve Systems","domain": "edgeverve.com","ats": "verify",               "count_all": 1, "count_accepted": 1}
+  ],
+  "excluded": {
+    "_reason": "Staffing/recruiting agencies repost other companies' jobs — monitoring them defeats the first-mover goal (you want the real employer's page). Aggregator/junk rows are not companies.",
+    "staffing_agencies": [
+      "BayOne Solutions", "HYrEzy Tech Solutions", "HuntingCube", "Talentgigs",
+      "Impetus Career Consultants", "VDart Digital", "Sourcebae", "Kenpath Technologies",
+      "Nucleusteq Consulting", "Artech L.L.C.", "HiroJet", "CS Tech AI",
+      "SkyPoint Cloud", "Weekday AI (YC W21)", "Bandhan Technologies", "Gofix Solutions"
+    ],
+    "junk_or_aggregator": ["Top Gen AI Jobs", "IT Industry", "BIG4", "nan"]
+  }
+}

@@ -1,0 +1,17 @@
+# JobPull reuses the same packages already installed for BE (Python 3.13).
+# Interpreter used/verified:
+#   C:\Users\WELCOME\AppData\Local\Programs\Python\Python313\python.exe
+python-jobspy>=1.1.75
+firecrawl-py>=1.0.0
+pymongo>=4.10.0
+pandas
+python-dotenv>=1.0.0
+requests>=2.32.0
+pydantic>=2.10.0
+# Console (app/) — API + in-app daily scheduler (already installed in this env):
+fastapi>=0.110
+uvicorn>=0.29
+APScheduler>=3.10
+PyJWT[crypto]>=2.8      # Auth0 access-token validation (RS256 via JWKS)
+# Telegram notifications use `requests` (above) — no extra package needed.
+# Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in JobPull/.env to enable pushes.

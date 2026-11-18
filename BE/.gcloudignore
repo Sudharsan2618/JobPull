@@ -1,0 +1,15 @@
+.env
+.env.*
+.git
+.gitignore
+__pycache__
+*.pyc
+.pytest_cache
+.venv
+venv
+tests
+cv.tex
+Agentic_AI_Interview_Prep_Answers.md
+career_test_results.json
+company_list.json
+target_companies_from_db.json

@@ -1,0 +1,934 @@
+[
+  {
+    "name": "Infosys",
+    "count": 19,
+    "sources": [
+      "naukri",
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:30:30.638000"
+  },
+  {
+    "name": "Accenture in India",
+    "count": 5,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:28.390000"
+  },
+  {
+    "name": "Accenture",
+    "count": 4,
+    "sources": [
+      "naukri",
+      "indeed"
+    ],
+    "latest": "2026-09-03 16:28:49.818000"
+  },
+  {
+    "name": "Top Gen AI Jobs",
+    "count": 3,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:15:51.021000"
+  },
+  {
+    "name": "PwC",
+    "count": 3,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-02 12:15:50.555000"
+  },
+  {
+    "name": "BayOne Solutions",
+    "count": 3,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:28:56.379000"
+  },
+  {
+    "name": "Bandhan Technologies",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:10.374000"
+  },
+  {
+    "name": "Deloitte US-India Offices",
+    "count": 2,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-31 17:13:47.317000"
+  },
+  {
+    "name": "Nucleusteq Consulting",
+    "count": 2,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-01 13:23:37.483000"
+  },
+  {
+    "name": "Nielsen",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:46"
+  },
+  {
+    "name": "Kinaxis",
+    "count": 2,
+    "sources": [
+      "indeed",
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:28:49.642000"
+  },
+  {
+    "name": "Ecolab",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:30.769000"
+  },
+  {
+    "name": "Sonata Software",
+    "count": 2,
+    "sources": [
+      "naukri",
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:17:07.996000"
+  },
+  {
+    "name": "HuntingCube",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:22.578000"
+  },
+  {
+    "name": "Talentgigs",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:56.419000"
+  },
+  {
+    "name": "Ecolab Global Services",
+    "count": 2,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:31:07.110000"
+  },
+  {
+    "name": "Kumaran Systems",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:28:50.307000"
+  },
+  {
+    "name": "HYrEzy Tech Solutions",
+    "count": 2,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:31.896000"
+  },
+  {
+    "name": "Predigle",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-03 16:28:49.544000"
+  },
+  {
+    "name": "Nexifyr",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-31 17:12:05.323000"
+  },
+  {
+    "name": "Fogwing - AI Powered Operations Management Platform",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-31 17:12:05.496000"
+  },
+  {
+    "name": "USEReady",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:26.601000"
+  },
+  {
+    "name": "Tranzeal",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-31 17:13:16.870000"
+  },
+  {
+    "name": "Thermo Fisher Scientific",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:29.828000"
+  },
+  {
+    "name": "Sentersoft Technology",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-29 08:07:18.670000"
+  },
+  {
+    "name": "Expleo",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-31 17:12:43.505000"
+  },
+  {
+    "name": "Planso",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:33.972000"
+  },
+  {
+    "name": "Blue Yonder",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:45.097000"
+  },
+  {
+    "name": "OTHERS LIMITED",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:22:55.800000"
+  },
+  {
+    "name": "TechWise Digital",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:27.403000"
+  },
+  {
+    "name": "Standard Chartered India",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:51.896000"
+  },
+  {
+    "name": "Kristalball Smart Solutions",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-31 17:13:09.413000"
+  },
+  {
+    "name": "Artech Infosystem Private Limited",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:36.062000"
+  },
+  {
+    "name": "optimhire",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-02 12:15:50.482000"
+  },
+  {
+    "name": "SES Global Technology Services",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:30:08.838000"
+  },
+  {
+    "name": "Saaki Argus And Averil Consulting",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-02 12:15:50.531000"
+  },
+  {
+    "name": "Hunar.AI",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:53.389000"
+  },
+  {
+    "name": "Nomia",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-31 17:13:06.045000"
+  },
+  {
+    "name": "IBM",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-01 13:24:22.721000"
+  },
+  {
+    "name": "Recro",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:16.374000"
+  },
+  {
+    "name": "GE Vernova",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:25.032000"
+  },
+  {
+    "name": "Appscrip",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-02 12:17:11.721000"
+  },
+  {
+    "name": "Wells Fargo",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-01 13:22:55.347000"
+  },
+  {
+    "name": "Valeo",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:08:00.665000"
+  },
+  {
+    "name": "AgroNest Ventures Private Limited",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-29 08:07:19.736000"
+  },
+  {
+    "name": "Nucleusteq",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-01 13:22:55.136000"
+  },
+  {
+    "name": "Proofpoint",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:30:37.062000"
+  },
+  {
+    "name": "Shuru",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:01.642000"
+  },
+  {
+    "name": "Ascendion",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:48.857000"
+  },
+  {
+    "name": "ALTEN India",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:22:59.088000"
+  },
+  {
+    "name": "IT Industry",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:07:57.637000"
+  },
+  {
+    "name": "Guidewire Software",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:09.808000"
+  },
+  {
+    "name": "DigitalXNode",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:00.146000"
+  },
+  {
+    "name": "Hitachi Digital Services",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:05.576000"
+  },
+  {
+    "name": "Bitcot Technologies",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:07:59.661000"
+  },
+  {
+    "name": "Virtualware Innovations",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:30:26.374000"
+  },
+  {
+    "name": "PwC India",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:29.269000"
+  },
+  {
+    "name": "Cuculus",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:36.409000"
+  },
+  {
+    "name": "Leading Client",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:30:16.930000"
+  },
+  {
+    "name": "Barclays",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:02.012000"
+  },
+  {
+    "name": "SkyPoint Cloud",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-03 16:28:49.608000"
+  },
+  {
+    "name": "NCR Voyix",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-01 13:23:28.789000"
+  },
+  {
+    "name": "Tenacious Hr Solution",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-01 13:24:23.606000"
+  },
+  {
+    "name": "Expleo Group",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:22:59.134000"
+  },
+  {
+    "name": "Razorpay",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:20.861000"
+  },
+  {
+    "name": "BIG4",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-31 17:12:43.179000"
+  },
+  {
+    "name": "Volvo Group",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:27.040000"
+  },
+  {
+    "name": "VDart Digital",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:28.379000"
+  },
+  {
+    "name": "Sourcebae",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:03.102000"
+  },
+  {
+    "name": "Deutsche Bank",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:35.860000"
+  },
+  {
+    "name": "Learningmate Solutions",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-01 13:23:30.917000"
+  },
+  {
+    "name": "SES Satellites",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:28:52.065000"
+  },
+  {
+    "name": "HARMAN India",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:29.853000"
+  },
+  {
+    "name": "Srinivas Waste Management Services (P) Ltd.",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-01 13:22:55.017000"
+  },
+  {
+    "name": "TVM Infotech Private Limited",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:07:56.006000"
+  },
+  {
+    "name": "Guardian Life",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:01.537000"
+  },
+  {
+    "name": "UKG",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-02 12:15:50.507000"
+  },
+  {
+    "name": "HiroJet",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:05.607000"
+  },
+  {
+    "name": "CodeRound AI",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:23.220000"
+  },
+  {
+    "name": "Artech L.L.C.",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:38.847000"
+  },
+  {
+    "name": "Cuculus GmbH",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-29 08:07:19.574000"
+  },
+  {
+    "name": "Dentsu Webchutney",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:08:53.416000"
+  },
+  {
+    "name": "The Reliable Jobs",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:05.322000"
+  },
+  {
+    "name": "Objectways Technologies",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-02 12:17:06.062000"
+  },
+  {
+    "name": "Accuris",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:34.430000"
+  },
+  {
+    "name": "Weekday AI (YC W21)",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:28.661000"
+  },
+  {
+    "name": "Nextiva",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-01 13:22:55.256000"
+  },
+  {
+    "name": "Cognizant",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:13.686000"
+  },
+  {
+    "name": "Kenpath Technologies",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:01.580000"
+  },
+  {
+    "name": "Happiest Minds Technologies",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:26.863000"
+  },
+  {
+    "name": "Cyncly",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-01 13:22:55.165000"
+  },
+  {
+    "name": "Innova ESI",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:40.596000"
+  },
+  {
+    "name": "YMinds.AI",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:30.090000"
+  },
+  {
+    "name": "Daesung Electric India",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-03 16:28:49.475000"
+  },
+  {
+    "name": "NTT DATA BUSINESS SOLUTIONS",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:08:54.779000"
+  },
+  {
+    "name": "Nokia",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:09:09.288000"
+  },
+  {
+    "name": "Tiger Analytics",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:15:54.054000"
+  },
+  {
+    "name": "Lowe's India",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:31.545000"
+  },
+  {
+    "name": "Avom Consultants",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-08-29 08:09:05.408000"
+  },
+  {
+    "name": "American Express",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:05.904000"
+  },
+  {
+    "name": "nan",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-29 08:07:18.904000"
+  },
+  {
+    "name": "EdgeVerve Systems",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:30:12.970000"
+  },
+  {
+    "name": "Impetus Career Consultants",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-01 13:23:02.968000"
+  },
+  {
+    "name": "Refold AI",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:11.487000"
+  },
+  {
+    "name": "Teradata",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:18.996000"
+  },
+  {
+    "name": "Salesforce",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-03 16:28:49.854000"
+  },
+  {
+    "name": "Quest Global",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-08-31 17:12:06.938000"
+  },
+  {
+    "name": "Mopid",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:12:15.718000"
+  },
+  {
+    "name": "Amazon Music",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:34.438000"
+  },
+  {
+    "name": "Solventum",
+    "count": 1,
+    "sources": [
+      "indeed"
+    ],
+    "latest": "2026-09-02 12:15:50.406000"
+  },
+  {
+    "name": "Antrino Labs",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-03 16:29:44.419000"
+  },
+  {
+    "name": "FetchJobs.co",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-09-02 12:16:03.049000"
+  },
+  {
+    "name": "Teleradiology Solutions",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-29 08:07:30.329000"
+  },
+  {
+    "name": "VoxyHealth",
+    "count": 1,
+    "sources": [
+      "linkedin"
+    ],
+    "latest": "2026-08-31 17:11:20.465000"
+  },
+  {
+    "name": "Naukri Assist",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-03 16:31:10.379000"
+  },
+  {
+    "name": "Gofix Solutions",
+    "count": 1,
+    "sources": [
+      "naukri"
+    ],
+    "latest": "2026-09-01 13:23:42.371000"
+  }
+]
