@@ -44,7 +44,7 @@ gcloud run deploy $ServiceName `
     --memory=512Mi `
     --min=0 `
     --max=1 `
-    --set-env-vars="DB_NAME=job-pull-simple,JOBS_COLLECTION=jobs,AUTH0_DOMAIN=dev-jobhunt.us.auth0.com,AUTH0_AUDIENCE=https://jobpull-api" `
+    --set-env-vars="DB_NAME=job-pull-simple,JOBS_COLLECTION=jobs,AUTH0_DOMAIN=dev-jobhunt.us.auth0.com,AUTH0_AUDIENCE=https://jobpull-api,POSTHOG_API_KEY=phc_XLaGhC29NW7u4kHAS8bstbpIRizJMdpHtJsNanHajVw,POSTHOG_HOST=https://us.i.posthog.com" `
     --set-secrets=$secretMap `
     $authFlag | Out-Host
 
@@ -59,7 +59,7 @@ gcloud run jobs deploy $JobName `
     --task-timeout=1h `
     --cpu=1 `
     --memory=1Gi `
-    --set-env-vars="DB_NAME=job-pull-simple,JOBS_COLLECTION=jobs" `
+    --set-env-vars="DB_NAME=job-pull-simple,JOBS_COLLECTION=jobs,POSTHOG_API_KEY=phc_XLaGhC29NW7u4kHAS8bstbpIRizJMdpHtJsNanHajVw,POSTHOG_HOST=https://us.i.posthog.com" `
     --set-secrets=$secretMap | Out-Host
 
 Write-Host "Granting Cloud Scheduler permission to invoke $JobName"

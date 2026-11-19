@@ -145,6 +145,36 @@ class _Gate:
 _GATE = _Gate(config.GEMINI_RPM)
 
 
+def _track_ai(model: str, usage: dict, latency: float) -> None:
+    """Emit a PostHog $ai_generation event so Gemini usage shows in AI
+    Observability. Public project key; never raises."""
+    if not getattr(config, "POSTHOG_API_KEY", "") or requests is None:
+        return
+    import uuid
+    u = usage or {}
+    try:
+        requests.post(
+            f"{config.POSTHOG_HOST.rstrip('/')}/i/v0/e/",
+            json={
+                "api_key": config.POSTHOG_API_KEY,
+                "event": "$ai_generation",
+                "properties": {
+                    "distinct_id": "jobpull-pipeline",
+                    "$ai_trace_id": str(uuid.uuid4()),
+                    "$ai_model": model,
+                    "$ai_provider": "gemini",
+                    "$ai_input_tokens": u.get("promptTokenCount", 0),
+                    "$ai_output_tokens": u.get("candidatesTokenCount", 0),
+                    "$ai_latency": round(latency, 3),
+                    "app": "jobpull",
+                },
+            },
+            timeout=5,
+        )
+    except Exception:
+        pass
+
+
 def _call_llm(desc: str) -> dict:
     """Call Gemini generateContent with a strict responseSchema. Retries on
     429 (rate) / 503 (overload) / network drops with backoff."""
@@ -163,6 +193,7 @@ def _call_llm(desc: str) -> dict:
     }
     for attempt in range(config.GEMINI_MAX_RETRIES):
         _GATE.wait()
+        t0 = time.monotonic()
         try:
             r = requests.post(url, json=payload, timeout=90)
         except Exception as e:
@@ -181,6 +212,7 @@ def _call_llm(desc: str) -> dict:
             time.sleep(3)
             continue
         data = r.json()
+        _track_ai(config.GEMINI_MODEL, data.get("usageMetadata"), time.monotonic() - t0)
         try:
             content = data["candidates"][0]["content"]["parts"][0]["text"]
         except Exception:

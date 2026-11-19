@@ -27,6 +27,10 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")  # legacy/optional
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN", "")
 AUTH0_AUDIENCE = os.getenv("AUTH0_AUDIENCE", "")
 
+# PostHog — AI Observability for the pipeline's Gemini calls. Project key is public.
+POSTHOG_API_KEY = os.getenv("POSTHOG_API_KEY", "")
+POSTHOG_HOST = os.getenv("POSTHOG_HOST", "https://us.i.posthog.com")
+
 # ---------------------------------------------------------------------------
 # Extraction engine (Phase 2) — Google Gemini direct, grounded structured output.
 #   Free tier (gemini-3.5-flash-lite): 15 RPM · 250K TPM · 500 requests/day.
