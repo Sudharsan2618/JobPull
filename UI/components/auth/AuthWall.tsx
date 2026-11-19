@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
+import { Auth0Provider, useAuth0, type RedirectLoginOptions } from '@auth0/auth0-react';
 import { setTokenGetter } from '@/lib/api';
 import { Spinner } from '@/components/ui/Spinner';
 
@@ -48,7 +48,7 @@ function Splash({ children }: { children: React.ReactNode }) {
   return <div style={{ height: '100vh', display: 'grid', placeItems: 'center', background: 'var(--color-bg)' }}>{children}</div>;
 }
 
-function LoginScreen({ onLogin, error }: { onLogin: (opts?: unknown) => void; error?: string }) {
+function LoginScreen({ onLogin, error }: { onLogin: (options?: RedirectLoginOptions) => void; error?: string }) {
   const [busy, setBusy] = React.useState(false);
   const google = () => { setBusy(true); onLogin({ authorizationParams: { connection: 'google-oauth2' } }); };
   return (
