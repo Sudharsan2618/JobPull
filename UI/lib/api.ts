@@ -108,6 +108,7 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
 
 const get = <T>(path: string) => req<T>(path);
 const post = <T>(path: string, body: unknown = {}) => req<T>(path, { method: 'POST', body: JSON.stringify(body) });
+const put = <T>(path: string, body: unknown = {}) => req<T>(path, { method: 'PUT', body: JSON.stringify(body) });
 const del = <T>(path: string) => req<T>(path, { method: 'DELETE' });
 
 export const api = {
@@ -115,7 +116,7 @@ export const api = {
   analytics: () => get<Analytics>('/api/analytics'),
   market: () => get<Market>('/api/analytics/market'),
   me: () => get<Me>('/api/me'),
-  setTrack: (track: string) => post<Me>('/api/me/track', { track }),
+  setTrack: (track: string) => put<Me>('/api/me/track', { track }),
   jobs: (params: { status?: string; source?: string; city?: string; days?: number; page?: number; limit?: number } = {}) => {
     const q = new URLSearchParams();
     if (params.status) q.set('status', params.status);
