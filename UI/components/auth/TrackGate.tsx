@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { api, type Me } from '@/lib/api';
+import { phCapture, phSetPerson } from '@/lib/analytics';
 import { Spinner } from '@/components/ui/Spinner';
 
 const TrackContext = React.createContext<string | null>(null);
@@ -30,6 +31,11 @@ export function TrackGate({ children }: { children: React.ReactNode }) {
     api.me().then(setMe).catch(() => setMe(null));
   }, []);
 
+  // Keep the person's `track` property in sync so dashboards can break down by it.
+  React.useEffect(() => {
+    if (me && me.track) phSetPerson({ track: me.track });
+  }, [me]);
+
   if (me === undefined) {
     return <div style={{ height: '100vh', display: 'grid', placeItems: 'center', background: 'var(--color-bg)' }}><Spinner size={22} /></div>;
   }
@@ -43,7 +49,12 @@ function RolePicker({ name, onDone }: { name?: string; onDone: (track: string) =
   const [busy, setBusy] = React.useState<string | null>(null);
   const pick = async (id: string) => {
     setBusy(id);
-    try { await api.setTrack(id); onDone(id); } catch { setBusy(null); }
+    try {
+      await api.setTrack(id);
+      phCapture('track_selected', { track: id });
+      phSetPerson({ track: id });
+      onDone(id);
+    } catch { setBusy(null); }
   };
   return (
     <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: 'var(--color-row-hover)', padding: '24px' }}>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Auth0Provider, useAuth0, type RedirectLoginOptions } from '@auth0/auth0-react';
 import { setTokenGetter } from '@/lib/api';
+import { phIdentify } from '@/lib/analytics';
 import { Spinner } from '@/components/ui/Spinner';
 
 const DOMAIN = process.env.NEXT_PUBLIC_AUTH0_DOMAIN || '';
@@ -31,13 +32,18 @@ export function AuthWall({ children }: { children: React.ReactNode }) {
 }
 
 function Gate({ children }: { children: React.ReactNode }) {
-  const { isLoading, isAuthenticated, error, loginWithRedirect, getAccessTokenSilently } = useAuth0();
+  const { isLoading, isAuthenticated, error, loginWithRedirect, getAccessTokenSilently, user } = useAuth0();
 
   // Register the token getter synchronously during render — NOT in an effect.
   // Child data-fetch effects run before parent effects, so an effect here would
   // leave the first /api call tokenless (401). Writing to a module ref in render
   // is idempotent and guarantees the getter is set before any page mounts.
   setTokenGetter(isAuthenticated ? () => getAccessTokenSilently() : null);
+
+  // Identify the person in PostHog (keyed by Auth0 sub) once signed in.
+  React.useEffect(() => {
+    if (isAuthenticated && user?.sub) phIdentify(user.sub, { email: user.email, name: user.name });
+  }, [isAuthenticated, user]);
 
   if (isLoading) return <Splash><Spinner size={22} /></Splash>;
   if (!isAuthenticated) return <LoginScreen error={error?.message} onLogin={loginWithRedirect} />;

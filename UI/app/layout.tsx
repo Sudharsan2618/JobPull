@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AppShell } from './AppShell';
+import { PostHogProvider } from '@/components/analytics/PostHogProvider';
 
 export const metadata: Metadata = {
   title: 'JobPull',
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
       </head>
-      <body><AppShell>{children}</AppShell></body>
+      <body><PostHogProvider><AppShell>{children}</AppShell></PostHogProvider></body>
     </html>
   );
 }

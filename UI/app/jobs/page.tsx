@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { api, type Job } from '@/lib/api';
+import { phCapture } from '@/lib/analytics';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
@@ -50,6 +51,7 @@ export default function JobsPage() {
 
   const openJob = (j: Job) => {
     setSelected(j); setOpen(true); setFullDesc(undefined);
+    phCapture('job_viewed', { job_id: j.id, title: j.title, company: j.company, source: j.source });
     api.job(j.id).then(f => setFullDesc(f.description || '')).catch(() => setFullDesc(''));
   };
 
@@ -172,7 +174,9 @@ function JobDetail({ job, description, onClose }: { job: Job; description?: stri
           {description === undefined ? <span style={{ color: 'var(--color-text-3)' }}><Spinner size={13} /> loading description…</span> : (description || '(no description stored)')}
         </div>
         <div style={{ marginTop: '16px' }}>
-          <a href={job.url} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', background: 'var(--color-brand)', color: '#fff', padding: '8px 16px', borderRadius: 'var(--radius-md)', fontSize: '13px', fontWeight: 600 }}>Open posting ↗</a>
+          <a href={job.url} target="_blank" rel="noopener"
+            onClick={() => phCapture('job_applied', { job_id: job.id, title: job.title, company: job.company, source: job.source })}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', background: 'var(--color-brand)', color: '#fff', padding: '8px 16px', borderRadius: 'var(--radius-md)', fontSize: '13px', fontWeight: 600 }}>Open posting ↗</a>
         </div>
       </div>
     </>
