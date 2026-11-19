@@ -44,7 +44,7 @@ gcloud run deploy $ServiceName `
     --memory=512Mi `
     --min=0 `
     --max=1 `
-    --set-env-vars="DB_NAME=job-pull-simple,JOBS_COLLECTION=jobs" `
+    --set-env-vars="DB_NAME=job-pull-simple,JOBS_COLLECTION=jobs,AUTH0_DOMAIN=dev-jobhunt.us.auth0.com,AUTH0_AUDIENCE=https://jobpull-api" `
     --set-secrets=$secretMap `
     $authFlag | Out-Host
 
