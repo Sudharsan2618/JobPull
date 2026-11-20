@@ -126,8 +126,14 @@ FRESHER_REJECT_KEYWORDS = [
     "driver", "delivery", "rider", "courier",
     "electrician", "welder", "fitter", "machinist", "turner", "lineman",
     "mechanical engineer", "civil engineer", "production engineer",
-    "field sales", "field executive", "telecaller", "telecalling", "bpo voice",
+    "field sales", "field executive", "telecaller", "telecalling",
     "security guard", "housekeeping", "nanny", "cook", "chef", "waiter",
+    # BPO / call-center / non-IT support — NOT genuine IT roles. (Real IT
+    # helpdesk still passes via "technical support" when none of these appear.)
+    "bpo", "kpo", "call center", "call centre", "voice process", "non voice",
+    "non-voice", "semi voice", "semi-voice", "blended process", "international voice",
+    "domestic voice", "customer support", "customer service", "customer care",
+    "telesales", "collections", "data entry",
 ]
 
 
