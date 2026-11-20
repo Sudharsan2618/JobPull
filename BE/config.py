@@ -65,35 +65,29 @@ SEARCH_LOCATIONS = ["Chennai", "Bangalore"]
 # accept/reject rules live in title_filter.evaluate_fresher.
 # ---------------------------------------------------------------------------
 FRESHER_SEARCH_TITLES = [
-    # ── Broad entry-level (IT-scoped so the board returns tech, not nursing/sales)
+    # ── Generic entry-level IT (kept broad on purpose — a "software developer"
+    #    search pulls java/python/.net/php/react/etc. fresher roles, so no
+    #    stack-specific keywords are needed). IT-scoped so boards return tech,
+    #    not nursing/sales freshers.
     "IT Fresher",
     "Software Developer Fresher",
-    "Software Developer Intern",
+    "Software Engineer Fresher",
     "Graduate Engineer Trainee",
     "Trainee Software Engineer",
     "Associate Software Engineer",
     "Junior Software Developer",
-    # ── Developer stacks (entry level)
-    "Junior Java Developer",
-    "Junior Python Developer",
-    "Junior .NET Developer",
-    "Junior Full Stack Developer",
-    "Junior PHP Developer",
-    "Junior React Developer",
-    "Junior Web Developer",
-    "Junior Android Developer",
-    "Junior Odoo Developer",
+    "Junior Software Engineer",
+    "Junior Developer",
+    "Junior Programmer",
     # ── QA / testing
     "Junior Software Tester",
     "QA Engineer Fresher",
     # ── Ops / infra / support
     "Junior DevOps Engineer",
     "Junior System Administrator",
-    "Junior Network Engineer",
     "Technical Support Fresher",
     # ── Data
     "Junior Data Analyst",
-    "Junior Data Engineer",
 ]
 
 # Profile registry — maps a profile key to its label + search scope. The

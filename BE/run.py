@@ -24,7 +24,7 @@ except Exception:
     pass
 
 import config
-from title_filter import evaluate_title
+from title_filter import evaluate_title, profiles_for
 from experience_filter import evaluate_experience
 from dedupe_titles import split_duplicates
 from store import get_collection, upsert_one, _dedupe_key
@@ -69,7 +69,9 @@ def main(argv):
     print(f"  workers={ {s: config.WORKERS[s] for s in sources} }  db={config.DB_NAME!r}")
     print("=" * 72)
 
-    titles, locs = config.SEARCH_TITLES, config.SEARCH_LOCATIONS
+    # Scrape BOTH profiles' titles: GenAI + IT-fresher (deduped, order kept).
+    titles = list(dict.fromkeys(config.SEARCH_TITLES + config.FRESHER_SEARCH_TITLES))
+    locs = config.SEARCH_LOCATIONS
     failures = []
 
     def record_failure(task, exc):
@@ -97,19 +99,27 @@ def main(argv):
           f"({collapsed} duplicate postings collapsed by job id)")
 
     # ── STAGE 3: FILTER (titles only) ─────────────────────────────────────
+    # PROFILE-AWARE filter: keep (and later enrich) a job if it matches EITHER
+    # profile. `accepted` stays the GenAI verdict (title + experience gate) so the
+    # GenAI track is unchanged; `profiles` carries the fresher match (title-only,
+    # no pre-LLM experience gate). 'accepted' bucket = kept for enrichment.
     accepted, rejected = [], []
     for job in unique:
-        ok, reason = evaluate_title(job.get("title", ""))
+        title = job.get("title", "")
+        g_ok, g_reason = evaluate_title(title)
         # Experience gate — only bites where experience is known pre-LLM (Naukri
         # listing). Indeed/LinkedIn have no listing experience here, so they pass
         # and get judged post-LLM in analyze.py.
-        if ok:
+        if g_ok:
             eok, ereason = evaluate_experience(job.get("experience", ""))
             if not eok:
-                ok, reason = False, ereason
-        job["accepted"] = ok
-        job["rejectionReason"] = None if ok else reason
-        (accepted if ok else rejected).append(job)
+                g_ok, g_reason = False, ereason
+        profiles = profiles_for(title)
+        f_ok = "fresher" in profiles
+        job["accepted"] = g_ok
+        job["rejectionReason"] = None if g_ok else g_reason
+        job["profiles"] = profiles
+        (accepted if (g_ok or f_ok) else rejected).append(job)
     print(f"\n[3/5] FILTER  {len(unique)} unique -> {len(accepted)} accepted, {len(rejected)} rejected")
 
     # Collapse mass-posted duplicates (same title+company under different job ids):
