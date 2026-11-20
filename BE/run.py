@@ -57,20 +57,38 @@ def _cap(jobs):
 
 
 def main(argv):
-    sources = [s.lower() for s in argv] or ALL_SOURCES
+    # Optional `--profile genai|fresher|both` (default both). Everything else is
+    # a source name. Lets a manual run target one profile without re-scraping the
+    # other; the nightly job/runner call main() with no --profile -> both.
+    argv = list(argv or [])
+    profile, cleaned, i = "both", [], 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--profile" and i + 1 < len(argv):
+            profile = argv[i + 1].lower(); i += 2; continue
+        if a.startswith("--profile="):
+            profile = a.split("=", 1)[1].lower(); i += 1; continue
+        cleaned.append(a); i += 1
+
+    sources = [s.lower() for s in cleaned] or ALL_SOURCES
     unknown = [s for s in sources if s not in ALL_SOURCES]
     if unknown:
         print(f"Unknown source(s): {unknown}. Valid: {ALL_SOURCES}")
         return
 
+    if profile == "genai":
+        titles = list(config.SEARCH_TITLES)
+    elif profile == "fresher":
+        titles = list(config.FRESHER_SEARCH_TITLES)
+    else:
+        titles = list(dict.fromkeys(config.SEARCH_TITLES + config.FRESHER_SEARCH_TITLES))
+
     print("=" * 72)
-    print(f"JobPull (optimized)  |  titles={config.SEARCH_TITLES}")
+    print(f"JobPull (optimized)  |  profile={profile}  titles={len(titles)}")
     print(f"  locations={config.SEARCH_LOCATIONS}  last {config.HOURS_OLD}h  sources={sources}")
     print(f"  workers={ {s: config.WORKERS[s] for s in sources} }  db={config.DB_NAME!r}")
     print("=" * 72)
 
-    # Scrape BOTH profiles' titles: GenAI + IT-fresher (deduped, order kept).
-    titles = list(dict.fromkeys(config.SEARCH_TITLES + config.FRESHER_SEARCH_TITLES))
     locs = config.SEARCH_LOCATIONS
     failures = []
 

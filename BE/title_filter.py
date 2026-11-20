@@ -24,6 +24,9 @@ ACCEPT_KEYWORDS = [
     "ai/ml", "ai ml",
     "deep learning",
     "forward deployed",   # Forward Deployed Engineer
+    "data scientist", "data science",
+    "computer vision",
+    "mlops",
 ]
 
 # Titles we DROP even if an accept keyword fuzzily matches (guards false positives).

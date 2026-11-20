@@ -51,8 +51,18 @@ JOBS_COLLECTION = os.getenv("JOBS_COLLECTION", "jobs")
 # Search scope — EXACTLY as requested. Change here, nowhere else.
 # ---------------------------------------------------------------------------
 SEARCH_TITLES = [
-    "Gen AI Engineer",
     "AI Engineer",
+    "Gen AI Engineer",
+    "Generative AI Engineer",
+    "Machine Learning Engineer",
+    "ML Engineer",
+    "Data Scientist",
+    "Deep Learning Engineer",
+    "NLP Engineer",
+    "Computer Vision Engineer",
+    "LLM Engineer",
+    "MLOps Engineer",
+    "AI/ML Engineer",
     "Python Developer",
     "Artificial Intelligence",
 ]
